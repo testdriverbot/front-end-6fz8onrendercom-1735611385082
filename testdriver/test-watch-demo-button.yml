@@ -1,0 +1,18 @@
+version: 4.1.32
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the "Watch Demo" button.
+    commands:
+      - command: hover-text
+        text: Watch Demo
+        description: button to watch the demo
+        action: click
+  - prompt: >-
+      Assert that a demo video or page is loaded.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: the demo video player is visible on the page
