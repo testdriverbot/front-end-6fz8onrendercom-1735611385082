@@ -1,0 +1,16 @@
+version: 4.1.32
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Assert that the webpage loads successfully.
+    commands:
+      - command: assert
+        expect: Streamline Your Sales Process from Quote to Payment is visible
+  - prompt: >-
+      Assert that the logo is visible on the webpage.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: Reseller Ease logo is visible
