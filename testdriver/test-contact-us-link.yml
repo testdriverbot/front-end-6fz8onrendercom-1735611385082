@@ -1,0 +1,15 @@
+version: 4.1.32
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll-until-text
+        text: Contact Us
+        direction: down
+  - prompt: >-
+      Assert that the contact page is displayed.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: the contact page is displayed with "Contact Us" heading
