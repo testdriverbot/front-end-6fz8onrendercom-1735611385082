@@ -1,0 +1,26 @@
+version: 4.1.32
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Click on the "Blog" link in the navigation bar.
+    commands:
+      - command: hover-text
+        text: Blog
+        description: blog link in the navigation bar
+        action: click
+  - prompt: Assert that the blog page loads without errors.
+    commands:
+      - command: assert
+        expect: the blog page displays "Reseller Ease Blog"
+  - prompt: Click on the "Pricing" link in the navigation bar.
+    commands:
+      - command: hover-text
+        text: Pricing
+        description: pricing link in the navigation bar
+        action: click
+  - prompt: >-
+      Assert that the pricing page loads without errors.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: Pricing page displays pricing plans
